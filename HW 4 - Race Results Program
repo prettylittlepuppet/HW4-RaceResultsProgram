@@ -1,0 +1,102 @@
+/******************************************************************************
+PrettyLittlePuppet
+COP 1101 T
+HW 4
+this still has errors but im too tired to fix it
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+//what will be used below with functions
+void insert_racers_times(string &, double &);
+void find_the_winner(string, string, string, double, double, double);
+double average_of_race(double, double, double);
+bool validate_user_input(double);
+
+int main()
+{
+	//these are the vaiables
+	string insert_racers_name, racers_name_1, racers_name_2, racers_name_3;
+	double insert_racers_time, racers_time_1, racers_time_2, racers_time_3;
+	return 0;
+}
+
+void display_welcome()
+{
+	//this displays the welcome prompt
+	cout << "***********************************\n";
+	cout << "Welcome to Race Results Program\n";
+	cout << "You are Asked to Enter the Three Racer's Names\n";
+	cout << "and Their Associated Race Time.\n\n";
+	cout << "Please enther a real number for Race Time (the Race Time Must be > 0)";
+	cout << "\n\nProgram Developed by: Hanna Robertson :)\n";
+	cout << "***********************************";
+}
+
+void insert_racers_times (string &insert_racers_name, double &insert_racers_time)
+{
+	cout << "Please enter the racer's first name > ";
+	cin >> insert_racers_name;
+	cout << "Please enter the racer's time >";
+	cin >> insert_racers_time;
+
+	while (insert_racers_time <= 0)
+		cout << "Invalid. Please try again.";
+	cin >> insert_racers_time;
+}
+
+
+void find_the_winner(string racers_name_1, string racers_name_2, string racers_name_3, double racers_time_1, double racers_time_2, double racers_time_3)
+{
+	//this will display after the names and times have been 
+	if (racers_time_1 > racers_time_2 && racers_time_1 > racers_time_3)
+		cout << "Congratulations " << racers_name_1 << "!!! You are the winner!!\n";
+	cout << "***** Your winning time is: " << racers_time_1 << " *****";
+
+	//i hate myself cause this still needs a statement apparently >:(
+	else if (racers_time_2 > racers_time_1 && racers_time_2 > racers_time_3)
+	{
+		cout << "Congratulations " << racers_name_2 << "!!! You are the winner!!\n";
+		cout << "***** Your winning time is: " << racers_time_2 << " *****";
+	}
+
+	else if (racers_time_3 > racers_time_1 && racers_time_3 > racers_time_2)
+	{
+		cout << "Congratulations " << racers_name_3 << "!!! You are the winner!!\n";
+		cout << "***** Your winning time is: " << racers_time_3 << " *****";
+	}
+
+	//because these times tie, i am only going to insert one of the racers times that tie
+	else if (racers_time_1 > racers_time_3 && racers_time_1 == racers_time_2)
+	{
+		cout << "We have a TIE, " << racer_name_1 << "and" << racer_name_2 << "!!\n"
+			cout << "***** Your winning time is: " << racers_time_1 << " *****";
+	}
+
+	else if (racers_time_1 > racers_time_2 && racers_time_1 == racers_time_3)
+	{
+		cout << "We have a TIE, " << racer_name_1 << "and" << racer_name_3 << "!!\n"
+		cout << "***** Your winning time is: " << racers_time_1 << " *****";
+	}
+
+	else if (racers_time_2 > racers_name_1 && racers_time_2 == racers_time_3)
+	{
+		cout << "We have a TIE, " << racer_name_2 << "and" << racer_name_3 << "!!\n"
+			cout << "***** Your winning time is: " << racers_time_1 << " *****";
+	}
+
+	else if (racers_time_1 == racers_time_2 && racers_time_2 == racers_time_3)
+		cout << "We have a 3 TIE!! No winner for this race..."
+
+}
+
+//i was going to ask about this not being defined but you left the classroom and i cant figure it out 
+double average_of_races (racers_time_1, racers_time_2, racers_time_3)
+{
+	//this is gonna calculate the average of the racers times
+	average_of_races = (racers_time_1 + racers_time_2 + racers_time_3) / 3.0;
+		cout << "Overall Race Time Average: " << average_of_races << "";
+}
